@@ -236,7 +236,7 @@ main {
     color: #555;
 }
 
-/* --- Подвал --- */
+/* --- Низ --- */
 .footer {
     background-color: var(--footer-bg-color);
     color: var(--footer-text-color);
