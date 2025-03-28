@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+
+:root {
+    --primary-color: #0d47a1; /* Глубокий синий */
+    --secondary-color: #1976d2; /* Ярче синий */
+    --accent-color: #42a5f5; /* Светло-голубой */
+    --background-color: #f4f7f6; /* Очень светлый серо-голубой */
+    --card-background: #ffffff;
+    --text-color: #333;
+    --header-text-color: #ffffff;
+    --footer-bg-color: #263238; /* Темно-серый */
+    --footer-text-color: #cfd8dc; /* Светло-серый текст в футере */
+    --button-text-color: #ffffff;
+    --border-radius: 10px;
+    --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --transition-speed: 0.3s;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.7;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- Шапка (Hero Section) --- */
+.hero {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: var(--header-text-color);
+    text-align: center;
+    padding: 4em 1em 3em 1em;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%); /* Скошенный край */
+    margin-bottom: -2em; /* Компенсация clip-path */
+    position: relative;
+    z-index: 1;
+     animation: fadeInDown 0.8s ease-out;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    margin: 0 0 0.3em 0;
+    font-weight: 700;
+    font-size: 2.8em;
+    letter-spacing: 1px;
+}
+
+.hero .subtitle {
+    font-size: 1.3em;
+    opacity: 0.9;
+    margin-bottom: 1em;
+    font-weight: 300;
+}
+
+.hero .author, .hero .supervisor {
+    font-size: 1em;
+    opacity: 0.8;
+    margin: 0.3em 0;
+}
+
+/* --- Основной контент --- */
+main {
+    flex: 1;
+    padding: 0 1em; /* Отступы по бокам */
+    max-width: 1100px;
+    margin: 0 auto; /* Центрирование */
+    width: 95%;
+    position: relative; /* Для z-index секций */
+    z-index: 2;
+}
+
+.content-section {
+    background: var(--card-background);
+    padding: 2.5em;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin-bottom: 2.5em;
+    opacity: 0; /* Начальное состояние для JS анимации */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transform: translateY(30px); /* Начальное смещение для JS анимации */
+}
+
+.content-section.appear { /* Класс добавляемый JS */
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.content-section h2 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 1.2em;
+    font-size: 2em;
+    font-weight: 600;
+    position: relative;
+    display: inline-block; /* Для позиционирования псевдоэлемента */
+    padding-bottom: 0.4em;
+}
+/* Декоративное подчеркивание под H2 */
+.content-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+}
+
+.section-content {
+    max-width: 850px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.section-content p {
+    margin-bottom: 1em;
+    color: #555;
+}
+
+.section-content strong {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* --- Сетка проектов --- */
+#projects h2 {
+    text-align: center;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2em;
+    margin-top: 2em;
+}
+
+.project-card {
+    background-color: #fff; /* Белый фон карточки */
+    border-radius: var(--border-radius);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.07);
+    overflow: hidden; /* Чтобы скругление работало с :hover transform */
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    display: flex;
+    flex-direction: column; /* Чтобы кнопка была внизу */
+}
+
+.project-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card-content {
+    padding: 1.8em;
+    flex-grow: 1; /* Занимает доступное пространство */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Распределяет пространство */
+}
+
+.project-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    color: var(--secondary-color);
+    font-size: 1.4em;
+    font-weight: 600;
+}
+
+.project-card p {
+    font-size: 0.95em;
+    margin-bottom: 1.5em;
+    flex-grow: 1; /* Толкает кнопку вниз */
+    color: #666;
+}
+
+.button {
+    display: inline-block;
+    background: linear-gradient(45deg, var(--secondary-color), var(--accent-color));
+    color: var(--button-text-color);
+    padding: 0.8em 1.8em;
+    border-radius: 50px; /* Скругленные края кнопки */
+    text-decoration: none;
+    font-weight: 600;
+    text-align: center;
+    transition: background var(--transition-speed) ease, transform 0.2s ease, box-shadow 0.3s ease;
+    border: none;
+    cursor: pointer;
+    align-self: center; /* Центрируем кнопку в карточке */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.button:hover {
+    background: linear-gradient(45deg, var(--accent-color), var(--secondary-color));
+    transform: translateY(-2px) scale(1.03);
+     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Информация про QR-коды */
+.qr-info {
+    text-align: center;
+    margin-top: 2em;
+    font-size: 0.95em;
+    color: #555;
+}
+.qr-info a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+.qr-info a:hover {
+    text-decoration: underline;
+}
+
+/* Секция с отзывами */
+#feedback blockquote {
+    border-left: 4px solid var(--accent-color);
+    padding-left: 1em;
+    margin: 1.5em 0;
+    font-style: italic;
+    color: #555;
+}
+
+/* --- Подвал --- */
+.footer {
+    background-color: var(--footer-bg-color);
+    color: var(--footer-text-color);
+    text-align: center;
+    padding: 1.5em 1em;
+    margin-top: 3em; /* Отступ сверху */
+    font-size: 0.9em;
+}
+
+.footer p {
+    margin: 0.3em 0;
+}
+
+/* --- Анимации (Пример для заголовка) --- */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* --- Адаптивность --- */
+@media (max-width: 768px) {
+    .hero {
+        padding: 3em 1em 2em 1em;
+        clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+        margin-bottom: -1em;
+    }
+    .hero h1 {
+        font-size: 2.2em;
+    }
+    .hero .subtitle {
+        font-size: 1.1em;
+    }
+     .content-section h2 {
+        font-size: 1.6em;
+    }
+     .project-grid {
+        grid-template-columns: 1fr; /* Одна колонка на мобильных */
+        gap: 1.5em;
+    }
+    main {
+        width: 95%;
+        margin-top: 1em;
+    }
+    .content-section {
+        padding: 1.5em;
+    }
+}
+
+@media (max-width: 480px) {
+     .hero h1 {
+        font-size: 1.8em;
+    }
+    .hero .subtitle {
+        font-size: 1em;
+    }
+     .content-section h2 {
+        font-size: 1.4em;
+    }
+    .project-card h3 {
+        font-size: 1.2em;
+    }
+    .button {
+        padding: 0.7em 1.5em;
+        font-size: 0.95em;
+    }
+}
