@@ -59,17 +59,26 @@ body {
 }
 
 .hero .subtitle {
-    font-size: 1.3em;
-    opacity: 0.9;
-    margin-bottom: 1em;
-    font-weight: 300;
+    font-size: 1.2em; /* Чуть меньше */
+    opacity: 0.85;    /* Чуть прозрачнее */
+    margin-bottom: 0.2em; /* Больше отступ снизу */
+    font-weight: 300; /* Оставляем легким */
+    letter-spacing: 0.5px; /* Немного больше расстояние между буквами */
+    padding-bottom: 1em;
+
 }
 
-.hero .author, .hero .supervisor {
-    font-size: 1em;
-    opacity: 0.8;
-    margin: 0.3em 0;
+
+.hero .author,
+.hero .supervisor {
+    font-size: 0.9em; /* Меньше основного текста */
+    opacity: 0.7;    /* Еще прозрачнее */
+    margin: 0.1em 0; /* Меньше вертикальный отступ между ними */
+    line-height: 1.4; /* Больше расстояние между строками */
+    font-style: italic; /* Можно добавить курсив */
 }
+
+
 
 /* --- Основной контент --- */
 main {
