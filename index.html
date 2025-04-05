@@ -9,6 +9,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Подключение библиотек Chart.js и p5.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/p5.min.js"></script>
 </head>
 
 <body>
@@ -109,12 +112,17 @@
             </div>
         </section>
 
+        <!-- Секция: Диаграмма эффективности -->
         <section id="feedback" class="content-section">
             <h2>Результаты и Отзывы</h2>
             <div class="section-content">
                 <p>Платформа успешно внедрена в учебный процесс Витебского филиала БГАС. Получены положительные отзывы
-                    от учащихся, которые отмечают улучшение понимания материала и повышение интереса к предмету
-                    благодаря возможности интерактивного взаимодействия с моделями сигналов.</p>
+                    от
+                    учащихся, которые отмечают улучшение понимания материала и повышение интереса к предмету благодаря
+                    возможности
+                    интерактивного взаимодействия с моделями сигналов.</p>
+                <!-- Встроенная диаграмма: линейный график -->
+                <canvas id="efficiencyChart" width="600" height="400"></canvas>
                 <blockquote>
                     "Наконец понял, как работает ЧМ — раньше казалось, что это черная магия!"
                 </blockquote>
@@ -124,6 +132,25 @@
             </div>
         </section>
 
+        <!-- Секция "Заключение" -->
+        <section id="conclusion" class="content-section">
+            <h2>Заключение</h2>
+            <div class="section-content">
+                <p>
+                    Данный проект наглядно демонстрирует, как современные веб-технологии и интерактивный подход могут
+                    существенно облегчить изучение сложных технических дисциплин, таких как теория обработки сигналов и
+                    модуляция.
+                    Предоставление студентам возможности "поиграть" с параметрами и немедленно увидеть результат
+                    способствует
+                    более глубокому и интуитивному пониманию материала.
+                </p>
+                <p>
+                    Мы надеемся, что эта платформа станет полезным инструментом для студентов и преподавателей, и будет
+                    способствовать
+                    дальнейшему интересу к изучению телекоммуникационных технологий.
+                </p>
+            </div>
+        </section>
     </main>
 
     <footer class="footer">
@@ -154,6 +181,40 @@
             observer.observe(section);
         });
     </script>
+    <!-- Скрипт для линейной диаграммы (Chart.js) -->
+    <script>
+        const ctxEfficiency = document.getElementById('efficiencyChart').getContext('2d');
+        const efficiencyChart = new Chart(ctxEfficiency, {
+            type: 'line',
+            data: {
+                labels: ['До проекта', 'После проекта'],
+                datasets: [{
+                    label: 'Уровень понимания модуляции',
+                    data: [4, 9],
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    fill: true,
+                    tension: 0.4,
+                    pointRadius: 5,
+                    pointBackgroundColor: 'rgba(75, 192, 192, 1)'
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        suggestedMax: 10
+                    }
+                },
+                animation: {
+                    duration: 1500,
+                    easing: 'easeOutBounce'
+                }
+            }
+        });
+    </script>
+
+
 
 </body>
 

@@ -244,6 +244,35 @@ main {
     font-style: italic;
     color: #555;
 }
+/* --- Стиль для плейсхолдера диаграммы --- */
+.diagram-placeholder {
+    border: 2px dashed var(--accent-color);
+    background-color: #f9f9f9;
+    padding: 1.5em;
+    margin: 2em auto; /* Центрирование по горизонтали */
+    text-align: center;
+    border-radius: var(--border-radius);
+    max-width: 90%; /* Ограничение ширины */
+}
+
+.diagram-placeholder p {
+    margin: 0.5em 0;
+    color: #777;
+}
+.diagram-placeholder strong {
+     color: var(--primary-color);
+     font-weight: 600;
+}
+/* Если вы вставите img, можно добавить стиль для него */
+#feedback img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1.5em auto; /* Центрирование изображения */
+    border-radius: var(--border-radius);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
 
 /* --- Низ --- */
 .footer {
