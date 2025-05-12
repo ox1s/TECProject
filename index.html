@@ -22,6 +22,22 @@
             <li><a href="#feedback" class="nav-link">Отзывы</a></li>
             <li><a href="#conclusion" class="nav-link">Заключение</a></li>
         </ul>
+        <button id="theme-toggle" aria-label="Переключить тему">
+            <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+        </button>
     </nav>
 
     <!-- Кнопка прокрутки вверх -->
@@ -39,9 +55,9 @@
         <div class="hero-background"></div>
         <div class="hero-content">
             <h1>Интерактивная Демонстрация Модуляции Сигналов</h1>
-            <p class="subtitle">АМ, ЧМ, ФМ и базовые гармонические сигналы</p>
-            <p class="author">Работа учащейся группы ПО211 Мельянцевой П.Е.</p>
-            <p class="supervisor">Научный руководитель: Рубаник Т.С.</p>
+            <p class="subtitle fade-in">АМ, ЧМ, ФМ и базовые гармонические сигналы</p>
+            <p class="author fade-in">Работа учащейся группы ПО211 Мельянцевой П.Е.</p>
+            <p class="supervisor fade-in">Научный руководитель: Рубаник Т.С.</p>
         </div>
     </header>
 
@@ -76,6 +92,11 @@
                 <!-- Карточки проектов -->
                 <div class="project-card">
                     <div class="card-content">
+                        <div class="card-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M2 12C5 12 5 8 8 8C11 8 11 16 14 16C17 16 17 12 22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
                         <h3>Базовые Сигналы</h3>
                         <p>Исследуйте основные формы сигналов: синусоиду, косинусоиду, прямоугольный и треугольный.
                             Управляйте их параметрами в реальном времени.</p>
@@ -85,6 +106,13 @@
 
                 <div class="project-card">
                     <div class="card-content">
+                        <div class="card-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M2 18C2 18 4 12 6 12C8 12 8 18 10 18C12 18 12 12 14 12C16 12 16 18 18 18C20 18 20 12 22 12" stroke="currentColor" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M2 8C2 8 4 4 6 4C8 4 8 12 10 12C12 12 12 4 14 4C16 4 16 12 18 12C20 12 20 4 22 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M2 16C2 16 4 14 6 14C8 14 8 16 10 16C12 16 12 14 14 14C16 14 16 16 18 16C20 16 20 14 22 14" stroke="currentColor" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
                         <h3>Амплитудная Модуляция</h3>
                         <p>Изучите принципы амплитудной модуляции сигнала и влияние различных параметров на результат.</p>
                         <a href="https://amplitudemodulation.netlify.app/" target="_blank" class="button">Открыть демонстрацию</a>
@@ -93,6 +121,14 @@
 
                 <div class="project-card">
                     <div class="card-content">
+                        <div class="card-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M2 12C3 12 3.5 10 4 10C4.5 10 4.5 14 5 14C5.5 14 5.5 10 6 10C6.5 10 6.5 14 7 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M8 12C8.5 12 8.5 10 9 10C9.5 10 9.5 14 10 14C10.5 14 10.5 10 11 10C11.5 10 11.5 14 12 14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M13 12C13.5 12 13.5 9 14 9C14.5 9 14.5 15 15 15C15.5 15 15.5 9 16 9C16.5 9 16.5 15 17 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M18 12C18.5 12 18.5 7 19 7C19.5 7 19.5 17 20 17C20.5 17 20.5 7 21 7C21.5 7 21.5 17 22 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
                         <h3>Частотная Модуляция</h3>
                         <p>Исследуйте, как меняется частота несущего сигнала под влиянием модулирующего сигнала.</p>
                         <a href="https://frequencymodulation.netlify.app/" target="_blank" class="button">Открыть демонстрацию</a>
@@ -101,6 +137,14 @@
 
                 <div class="project-card">
                     <div class="card-content">
+                        <div class="card-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M2 12C3 12 4 14 5 12C6 10 7 10 8 12C9 14 10 14 11 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M13 12C14 12 15 14 16 12C17 10 18 10 19 12C20 14 21 14 22 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0.5 0.5"/>
+                                <path d="M2 8C3 8 4 10 5 8C6 6 7 6 8 8C9 10 10 10 11 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0.5 0.5"/>
+                                <path d="M13 8C14 8 15 10 16 8C17 6 18 6 19 8C20 10 21 10 22 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
                         <h3>Фазовая Модуляция</h3>
                         <p>Изучите принципы фазовой модуляции и её применение в цифровой передаче данных.</p>
                         <a href="https://fmn-viz.netlify.app/" target="_blank" class="button">Открыть демонстрацию</a>
@@ -109,6 +153,14 @@
 
                 <div class="project-card">
                     <div class="card-content">
+                        <div class="card-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M2 6C3 6 3 10 4 10C5 10 5 2 6 2C7 2 7 14 8 14C9 14 9 6 10 6" stroke="currentColor" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M10 16C11 16 11 12 12 12C13 12 13 20 14 20C15 20 15 8 16 8C17 8 17 16 18 16" stroke="currentColor" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M18 14C19 14 19 10 20 10C21 10 21 18 22 18" stroke="currentColor" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M2 16C2 16 2.5 13 4 13C5.5 13 6 19 8 19C10 19 10.5 9 12 9C13.5 9 14 22 16 22C18 22 18.5 12 20 12C21.5 12 22 16 22 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
                         <h3>АМ со случайным сигналом</h3>
                         <p>Исследуйте амплитудную модуляцию с использованием случайного шумового сигнала.</p>
                         <a href="https://amplitudemodulationwithrandomcarrier.netlify.app/" target="_blank" class="button">Открыть демонстрацию</a>
@@ -143,11 +195,11 @@
                 <div class="testimonials">
                     <blockquote>
                         "Наконец-то понял, как работает ЧМ — раньше казалось, что это черная магия!"
-                        <footer>- Студент группы ПО211</footer>
+                        <footer>- Студент группы ТК321</footer>
                     </blockquote>
                     <blockquote>
                         "Возможность менять параметры и сразу видеть результат очень помогает в понимании."
-                        <footer>- Студент группы ПО212</footer>
+                        <footer>- Студент группы ПО211</footer>
                     </blockquote>
                 </div>
             </div>
@@ -296,6 +348,42 @@
                 }
             }
         });
+
+        // Переключение темы
+        const themeToggle = document.getElementById('theme-toggle');
+        const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+        
+        // Проверяем сохраненную тему или системные настройки
+        if (localStorage.getItem('theme') === 'dark' || 
+            (!localStorage.getItem('theme') && prefersDarkScheme.matches)) {
+            document.body.classList.add('dark-theme');
+        } else {
+            document.body.classList.remove('dark-theme');
+        }
+        
+        // Обновляем иконку в зависимости от текущей темы
+        updateThemeIcon();
+        
+        themeToggle.addEventListener('click', () => {
+            // Переключаем тему
+            document.body.classList.toggle('dark-theme');
+            
+            // Сохраняем предпочтение
+            if (document.body.classList.contains('dark-theme')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
+            
+            // Обновляем иконку
+            updateThemeIcon();
+        });
+        
+        function updateThemeIcon() {
+            const isDark = document.body.classList.contains('dark-theme');
+            document.querySelector('.sun-icon').style.display = isDark ? 'none' : 'block';
+            document.querySelector('.moon-icon').style.display = isDark ? 'block' : 'none';
+        }
     </script>
 </body>
 
