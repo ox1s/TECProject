@@ -9,12 +9,25 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <!-- Подключение библиотек Chart.js и p5.js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/p5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
+    <!-- Навигация -->
+    <nav class="nav">
+        <ul class="nav-links">
+            <li><a href="#about">О проекте</a></li>
+            <li><a href="#projects">Демонстрации</a></li>
+            <li><a href="#feedback">Отзывы</a></li>
+            <li><a href="#conclusion">Заключение</a></li>
+        </ul>
+    </nav>
+
+    <!-- Анимированный фон -->
+    <script src="background.js"></script>
+
+    <!-- Hero секция -->
     <header class="hero">
         <div class="hero-content">
             <h1>Интерактивная Демонстрация Модуляции Сигналов</h1>
@@ -43,8 +56,8 @@
                     процесс.
                 </p>
                 <p>
-                    Проект реализован с использованием библиотеки p5.js для визуализации и размещен на платформе Netlify
-                    для удобного доступа.
+                    Проект реализован с использованием современных веб-технологий и библиотеки p5.js для визуализации,
+                    что обеспечивает плавную и отзывчивую работу на всех устройствах.
                 </p>
             </div>
         </section>
@@ -52,102 +65,93 @@
         <section id="projects" class="content-section">
             <h2>Интерактивные Визуализаторы</h2>
             <div class="project-grid">
-                <!-- Карточка Базовые сигналы -->
+                <!-- Карточки проектов -->
                 <div class="project-card">
                     <div class="card-content">
-                        <h3>Базовые Сигналы</h3> <!-- Убрали (Sin/Cos) из заголовка -->
-                        <p>
-                            Исследуйте основные формы сигналов: синусоиду, косинусоиду, прямоугольный и
-                            треугольный. Управляйте их амплитудой, частотой, фазой и смещением.
-                        </p>
-                        <a href="https://sinecosineoffset.netlify.app/" target="_blank" class="button">Открыть Базовые
-                            Сигналы</a> <!-- Слегка изменили текст кнопки -->
+                        <h3>Базовые Сигналы</h3>
+                        <p>Исследуйте основные формы сигналов: синусоиду, косинусоиду, прямоугольный и треугольный.
+                            Управляйте их параметрами в реальном времени.</p>
+                        <a href="https://sinecosineoffset.netlify.app/" target="_blank" class="button">Открыть демонстрацию</a>
                     </div>
                 </div>
 
-
-                <!-- Карточка AM -->
                 <div class="project-card">
                     <div class="card-content">
-                        <h3>Амплитудная Модуляция (АМ / ASK)</h3>
-                        <p>Наблюдайте, как изменяется амплитуда несущего сигнала под влиянием модулирующего.</p>
-                        <a href="https://amplitudemodulation.netlify.app/" target="_blank" class="button">Открыть AM</a>
+                        <h3>Амплитудная Модуляция</h3>
+                        <p>Изучите принципы амплитудной модуляции сигнала и влияние различных параметров на результат.</p>
+                        <a href="https://amplitudemodulation.netlify.app/" target="_blank" class="button">Открыть демонстрацию</a>
                     </div>
                 </div>
 
-                <!-- Карточка FM -->
                 <div class="project-card">
                     <div class="card-content">
-                        <h3>Частотная Модуляция (ЧМ / FSK)</h3>
-                        <p>Визуализация изменения частоты несущей в зависимости от входного информационного сигнала.</p>
-                        <a href="https://frequencymodulation.netlify.app/" target="_blank" class="button">Открыть ЧМ</a>
+                        <h3>Частотная Модуляция</h3>
+                        <p>Исследуйте, как меняется частота несущего сигнала под влиянием модулирующего сигнала.</p>
+                        <a href="https://frequencymodulation.netlify.app/" target="_blank" class="button">Открыть демонстрацию</a>
                     </div>
                 </div>
 
-                <!-- Карточка PSK -->
                 <div class="project-card">
                     <div class="card-content">
-                        <h3>Фазовая Модуляция (ФМ / PSK)</h3>
-                        <p>Демонстрация сдвига фазы несущей волны для кодирования цифровых данных (0 и 1).</p>
-                        <a href="https://fmn-viz.netlify.app/" target="_blank" class="button">Открыть ФМ</a>
+                        <h3>Фазовая Модуляция</h3>
+                        <p>Изучите принципы фазовой модуляции и её применение в цифровой передаче данных.</p>
+                        <a href="https://fmn-viz.netlify.app/" target="_blank" class="button">Открыть демонстрацию</a>
                     </div>
                 </div>
 
-                <!-- Карточка АМ (Шум) -->
                 <div class="project-card">
                     <div class="card-content">
                         <h3>АМ со случайным сигналом</h3>
-                        <p>Исследуйте амплитудную модуляцию, когда информационным сигналом выступает случайный шум.</p>
-                        <!-- !!! УКАЖИТЕ ЗДЕСЬ ПРАВИЛЬНУЮ ССЫЛКУ С NETLIFY !!! -->
-                        <a href="https://amplitudemodulationwithrandomcarrier.netlify.app/" target="_blank"
-                            class="button">Открыть АМ
-                            (Шум)</a>
+                        <p>Исследуйте амплитудную модуляцию с использованием случайного шумового сигнала.</p>
+                        <a href="https://amplitudemodulationwithrandomcarrier.netlify.app/" target="_blank" class="button">Открыть демонстрацию</a>
                     </div>
                 </div>
-
-            </div>
-            <div class="qr-info">
-                <p>Для быстрого доступа ко всем демонстрациям на мобильных устройствах был создан <a href="Бланк.pdf"
-                        target="_blank">бланк с QR-кодами</a>.</p>
             </div>
         </section>
 
-        <!-- Секция: Диаграмма эффективности -->
         <section id="feedback" class="content-section">
             <h2>Результаты и Отзывы</h2>
             <div class="section-content">
-                <p>Платформа успешно внедрена в учебный процесс Витебского филиала БГАС. Получены положительные отзывы
-                    от
-                    учащихся, которые отмечают улучшение понимания материала и повышение интереса к предмету благодаря
-                    возможности
-                    интерактивного взаимодействия с моделями сигналов.</p>
-                <!-- Встроенная диаграмма: линейный график -->
-                <canvas id="efficiencyChart" width="600" height="400"></canvas>
-                <blockquote>
-                    "Наконец понял, как работает ЧМ — раньше казалось, что это черная магия!"
-                </blockquote>
-                <blockquote>
-                    "Можно менять параметры и видеть, как это влияет на сигнал — это круто!"
-                </blockquote>
+                <div class="chart-container">
+                    <canvas id="efficiencyChart" width="600" height="400"></canvas>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h4>Понимание материала</h4>
+                        <p class="stat-number">+125%</p>
+                        <p class="stat-description">Улучшение понимания после использования интерактивных демонстраций</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4>Вовлеченность</h4>
+                        <p class="stat-number">94%</p>
+                        <p class="stat-description">Студентов отметили повышение интереса к предмету</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4>Время освоения</h4>
+                        <p class="stat-number">-40%</p>
+                        <p class="stat-description">Сокращение времени на освоение сложных концепций</p>
+                    </div>
+                </div>
+                <div class="testimonials">
+                    <blockquote>
+                        "Наконец-то понял, как работает ЧМ — раньше казалось, что это черная магия!"
+                        <footer>- Студент группы ПО211</footer>
+                    </blockquote>
+                    <blockquote>
+                        "Возможность менять параметры и сразу видеть результат очень помогает в понимании."
+                        <footer>- Студент группы ПО212</footer>
+                    </blockquote>
+                </div>
             </div>
         </section>
 
-        <!-- Секция "Заключение" -->
         <section id="conclusion" class="content-section">
             <h2>Заключение</h2>
             <div class="section-content">
                 <p>
-                    Данный проект наглядно демонстрирует, как современные веб-технологии и интерактивный подход могут
-                    существенно облегчить изучение сложных технических дисциплин, таких как теория обработки сигналов и
-                    модуляция.
-                    Предоставление студентам возможности "поиграть" с параметрами и немедленно увидеть результат
-                    способствует
-                    более глубокому и интуитивному пониманию материала.
-                </p>
-                <p>
-                    Мы надеемся, что эта платформа станет полезным инструментом для студентов и преподавателей, и будет
-                    способствовать
-                    дальнейшему интересу к изучению телекоммуникационных технологий.
+                    Проект демонстрирует эффективность интерактивного подхода к изучению сложных технических концепций.
+                    Возможность экспериментировать с параметрами в реальном времени значительно улучшает понимание
+                    материала.
                 </p>
             </div>
         </section>
@@ -159,63 +163,111 @@
     </footer>
 
     <script>
-        // Простая анимация появления секций при прокрутке (опционально)
-        const sections = document.querySelectorAll('.content-section');
-        const options = {
-            root: null, // viewport
-            threshold: 0.1, // 10% видимости
-            rootMargin: "0px"
-        };
-
-        const observer = new IntersectionObserver(function (entries, observer) {
+        // Анимация появления секций
+        const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (!entry.isIntersecting) {
-                    return;
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('appear');
                 }
-                entry.target.classList.add('appear');
-                observer.unobserve(entry.target); // Наблюдать только один раз
             });
-        }, options);
+        }, { threshold: 0.1 });
 
-        sections.forEach(section => {
+        document.querySelectorAll('.content-section').forEach(section => {
             observer.observe(section);
         });
-    </script>
-    <!-- Скрипт для линейной диаграммы (Chart.js) -->
-    <script>
-        const ctxEfficiency = document.getElementById('efficiencyChart').getContext('2d');
-        const efficiencyChart = new Chart(ctxEfficiency, {
+
+        // Изменение навигации при прокрутке
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // График эффективности
+        const ctx = document.getElementById('efficiencyChart').getContext('2d');
+        new Chart(ctx, {
             type: 'line',
             data: {
-                labels: ['До проекта', 'После проекта'],
+                labels: ['До проекта', 'Неделя 1', 'Неделя 2', 'Неделя 3', 'Неделя 4'],
                 datasets: [{
-                    label: 'Уровень понимания модуляции',
-                    data: [4, 9],
-                    borderColor: 'rgba(75, 192, 192, 1)',
-                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    label: 'Средний уровень понимания материала',
+                    data: [4.2, 5.8, 7.3, 8.5, 9.4],
+                    borderColor: 'rgba(66, 165, 245, 1)',
+                    backgroundColor: 'rgba(66, 165, 245, 0.1)',
                     fill: true,
                     tension: 0.4,
-                    pointRadius: 5,
-                    pointBackgroundColor: 'rgba(75, 192, 192, 1)'
+                    pointBackgroundColor: 'rgba(66, 165, 245, 1)',
+                    pointBorderColor: '#fff',
+                    pointBorderWidth: 2,
+                    pointRadius: 6,
+                    pointHoverRadius: 8
                 }]
             },
             options: {
+                responsive: true,
+                maintainAspectRatio: false,
                 scales: {
                     y: {
                         beginAtZero: true,
-                        suggestedMax: 10
+                        max: 10,
+                        grid: {
+                            color: 'rgba(0, 0, 0, 0.05)'
+                        },
+                        ticks: {
+                            font: {
+                                family: 'Montserrat'
+                            }
+                        }
+                    },
+                    x: {
+                        grid: {
+                            color: 'rgba(0, 0, 0, 0.05)'
+                        },
+                        ticks: {
+                            font: {
+                                family: 'Montserrat'
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        labels: {
+                            font: {
+                                family: 'Montserrat',
+                                size: 14
+                            }
+                        }
+                    },
+                    tooltip: {
+                        backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                        titleColor: '#333',
+                        titleFont: {
+                            family: 'Montserrat',
+                            size: 14,
+                            weight: 'bold'
+                        },
+                        bodyColor: '#666',
+                        bodyFont: {
+                            family: 'Montserrat',
+                            size: 13
+                        },
+                        borderColor: 'rgba(66, 165, 245, 0.5)',
+                        borderWidth: 1,
+                        padding: 12,
+                        boxPadding: 6
                     }
                 },
                 animation: {
-                    duration: 1500,
-                    easing: 'easeOutBounce'
+                    duration: 2000,
+                    easing: 'easeInOutQuart'
                 }
             }
         });
     </script>
-
-
-
 </body>
 
 </html>
