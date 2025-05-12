@@ -17,18 +17,26 @@
     <!-- Навигация -->
     <nav class="nav">
         <ul class="nav-links">
-            <li><a href="#about">О проекте</a></li>
-            <li><a href="#projects">Демонстрации</a></li>
-            <li><a href="#feedback">Отзывы</a></li>
-            <li><a href="#conclusion">Заключение</a></li>
+            <li><a href="#about" class="nav-link active">О проекте</a></li>
+            <li><a href="#projects" class="nav-link">Демонстрации</a></li>
+            <li><a href="#feedback" class="nav-link">Отзывы</a></li>
+            <li><a href="#conclusion" class="nav-link">Заключение</a></li>
         </ul>
     </nav>
+
+    <!-- Кнопка прокрутки вверх -->
+    <button id="scroll-top" aria-label="Прокрутить вверх">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
 
     <!-- Анимированный фон -->
     <script src="background.js"></script>
 
     <!-- Hero секция -->
     <header class="hero">
+        <div class="hero-background"></div>
         <div class="hero-content">
             <h1>Интерактивная Демонстрация Модуляции Сигналов</h1>
             <p class="subtitle">АМ, ЧМ, ФМ и базовые гармонические сигналы</p>
@@ -168,6 +176,15 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('appear');
+                    
+                    // Обновляем активную ссылку в навигации
+                    const id = entry.target.getAttribute('id');
+                    document.querySelectorAll('.nav-link').forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${id}`) {
+                            link.classList.add('active');
+                        }
+                    });
                 }
             });
         }, { threshold: 0.1 });
@@ -179,11 +196,23 @@
         // Изменение навигации при прокрутке
         window.addEventListener('scroll', () => {
             const nav = document.querySelector('.nav');
+            const scrollTop = document.getElementById('scroll-top');
+            
             if (window.scrollY > 100) {
                 nav.classList.add('scrolled');
+                scrollTop.classList.add('visible');
             } else {
                 nav.classList.remove('scrolled');
+                scrollTop.classList.remove('visible');
             }
+        });
+        
+        // Прокрутка вверх при клике на кнопку
+        document.getElementById('scroll-top').addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
 
         // График эффективности
